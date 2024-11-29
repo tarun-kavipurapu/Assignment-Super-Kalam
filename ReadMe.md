@@ -52,6 +52,9 @@ For this system, a combination of **RDBMS** (PostgreSQL) and **NoSQL** (MongoDB)
        }
      ]
      ```
+#### 2.  **Search Events**
+   - **Endpoint**: `GET /api/events/search`
+   - **Description**: Search for events based on a query. This query can include event title, description, city, and event type. The search can be flexible and support partial matches.
 
 #### 3. **Get All Events**
    - **Endpoint**: `GET /api/events`
@@ -163,6 +166,7 @@ For this system, a combination of **RDBMS** (PostgreSQL) and **NoSQL** (MongoDB)
 #### 3. **Send Push Notification**
    - **Endpoint**: `POST /api/notifications/push`
    - **Description**: Send a push notification to users (admin access required).
+  
 
 ---
 
@@ -177,4 +181,7 @@ For this system, a combination of **RDBMS** (PostgreSQL) and **NoSQL** (MongoDB)
   - `locked`: The seat is temporarily reserved for a user (pending confirmation).
   - `booked`: The seat is confirmed as part of the user's booking.
 
-This concurrency control ensures that the system handles multiple users attempting to book the same seat at the same time, providing a smooth and reliable experience.
+- Payment Status can also be Maintained the similar way by maintaining the Simmilar way with payment_status
+  
+
+  ### **Search System**
