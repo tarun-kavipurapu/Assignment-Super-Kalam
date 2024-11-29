@@ -62,8 +62,7 @@ For this system, a combination of **RDBMS** (PostgreSQL) and **NoSQL** (MongoDB)
    - **Query Params**:
      - `city_id` (optional)
      - `event_type` (optional, `movie`, `sport`, `standup`)
-     - `start_date` (optional)
-     - `end_date` (optional)
+
 
 #### 4. **Get Event by ID**
    - **Endpoint**: `GET /api/events/{event_id}`
