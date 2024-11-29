@@ -183,4 +183,3 @@ For this system, a combination of **RDBMS** (PostgreSQL) and **NoSQL** (MongoDB)
 - Payment Status can also be Maintained the similar way by maintaining the Simmilar way with payment_status
   
 
-  ### **Search System**
