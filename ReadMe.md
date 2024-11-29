@@ -108,6 +108,7 @@ For this system, a combination of **RDBMS** (PostgreSQL) and **NoSQL** (MongoDB)
      ```
      -  conditional check for locked_at and locked status
 
+ - Please Note that the Lock Seat and Book seat has been merged into a single api call
 #### 4. **Book Seats**
    - **Endpoint**: `POST /api/bookings/{booking_id}/seats`
    - **Description**: Assign specific seats to a booking. Updates the lock status and lock time for the seats.
@@ -162,11 +163,12 @@ For this system, a combination of **RDBMS** (PostgreSQL) and **NoSQL** (MongoDB)
    - **Endpoint**: `PUT /api/users/{user_id}/notifications/{notification_id}/read`
    - **Description**: Mark a specific notification as read.
 
+
 #### 3. **Send Push Notification**
    - **Endpoint**: `POST /api/notifications/push`
    - **Description**: Send a push notification to users (admin access required).
-  
-
+   - we can use this to send push notification of booking sucess or failure or event_schedule notification   
+  - Notification Can also be stored in database but did not have time to implement this
 ---
 
 ### **Concurrency and Lock Status**
