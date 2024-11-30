@@ -120,6 +120,12 @@ For this system, a combination of **RDBMS** (PostgreSQL) and **NoSQL** (MongoDB)
        "locked_at": "2024-11-29T10:30:00"
      }
      ```
+     - Begin a transaction.
+        - Check seat availability (status = 'available').
+        - Check for locked_at status
+        - Update seat status to locked and set the locked_at timestamp.
+        - If a seat is already locked, roll back the transaction and return an error.
+        - Commit the transaction once the seat is locked successfully.
 
 #### 7. **Get Timeout for User-Selected Seats**
    - **Endpoint**: `GET /api/seats/timeout`
@@ -138,6 +144,10 @@ For this system, a combination of **RDBMS** (PostgreSQL) and **NoSQL** (MongoDB)
        "amount": 150.00
      }
      ```
+     - Begin a transaction.
+     - Validate the booking_id.
+     - Create a payment record with a pending status.
+     - Commit the transaction.
 
 #### 2. **Confirm Payment**
    - **Endpoint**: `POST /api/payments/confirm`
@@ -149,6 +159,11 @@ For this system, a combination of **RDBMS** (PostgreSQL) and **NoSQL** (MongoDB)
        "status": "completed"
      }
      ```
+      - Begin a transaction.
+      - Verify the payment details.
+      - Update the payment record to completed.
+      - Update seat status to booked.
+      - Commit the transaction.
 
 #### 3. **Get Payment Details**
    - **Endpoint**: `GET /api/payments/{payment_id}`
