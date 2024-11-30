@@ -1,10 +1,10 @@
 ### DB Architecture
 
-For this system, a combination of **RDBMS** (PostgreSQL) and **NoSQL** (MongoDB) is used to efficiently manage both structured and unstructured data:
+For this system, a combination of **RDBMS** (PostgreSQL) and **NoSQL** (MongoDB) can be used to efficiently manage both structured and unstructured data:
 
 - **PostgreSQL** (Relational Database) is used for transactional data, ensuring **ACID** (Atomicity, Consistency, Isolation, Durability) properties where required. This includes data such as user information, events, bookings, seats, payments, etc., which need to maintain strict integrity and consistency.
   
-- **MongoDB** (NoSQL Database) is used for handling unstructured or semi-structured data, such as reviews, comments, and other extra metadata that may not need ACID compliance but still needs to be efficiently queried. MongoDB will store additional information that can be linked to relational data via a common ID.
+- **MongoDB** (NoSQL Database) can be used for handling unstructured or semi-structured data, such as reviews, comments, and other extra metadata that may not need ACID compliance but still needs to be efficiently queried. MongoDB will store additional information that can be linked to relational data via a common ID.
 
 - Both databases will be **connected via a common ID** to enable seamless integration and data retrieval across both systems.
 
@@ -121,6 +121,9 @@ For this system, a combination of **RDBMS** (PostgreSQL) and **NoSQL** (MongoDB)
      }
      ```
 
+#### 7. **Get Timeout for User-Selected Seats**
+   - **Endpoint**: `GET /api/seats/timeout`
+   - **Description**: Provides the timeout duration for holding user-selected seats before they are released.
 ---
 
 ### **Payment System**
