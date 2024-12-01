@@ -10,6 +10,15 @@ For this system, a combination of **RDBMS** (PostgreSQL) and **NoSQL** (MongoDB)
 
 [Link to DB Schema](https://dbdiagram.io/d/67499a5de9daa85aca20c151)
 
+### Things i did not have time for
+  - FOr creation of an Event there must be different type of user with different access level and verification like an admin
+  - Did not discuss about various Transaction Isolation levels each table has to ensure concurrent transactions
+  - Did not Have time to establish UML class based diagram of the datamodel
+  - On the High Level in object Oriented Design 
+    - Payment Class can be  implemented using startegy pattern as there are different startegies as different payment types to implement here.
+    - Notification of (Booking class)->observer can be done using Observer pattern as i can notify different notification services like email, sms.
+    - Most of the clases like seat,venue,event has a composition type relation ship  with eaach other
+
 ---
 
 ### **API Endpoints**
